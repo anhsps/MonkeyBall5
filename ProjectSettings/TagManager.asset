@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Trap
+  - SR1
+  - SR2
+  - SR3
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Finish
+  - Water
+  - UI
+  - Wall
+  - Switch1
+  - Switch2
+  - Switch3
+  - Switch4
+  - Bridge
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
