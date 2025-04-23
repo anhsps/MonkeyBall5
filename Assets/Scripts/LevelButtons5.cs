@@ -7,10 +7,11 @@ using TMPro;
 public class LevelButtons5 : MonoBehaviour
 {
     [SerializeField] private Sprite lockedSprite, unlockedSprite;
-    [SerializeField] private Button[] levelButtons;
+    private Button[] levelButtons;
 
     void Start()
     {
+        levelButtons = GetComponentsInChildren<Button>(true);
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
 
         for (int i = 0; i < levelButtons.Length; i++)
@@ -18,12 +19,11 @@ public class LevelButtons5 : MonoBehaviour
             int levelIndex = i + 1;
             Button button = levelButtons[i];
             Image buttonImage = button.GetComponent<Image>();
-            TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
+            TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>(true);
 
             if (levelIndex <= unlockedLevel)
             {
                 // Level da mo khoa
-                button.interactable = true;
                 buttonText.gameObject.SetActive(true);
                 buttonImage.sprite = unlockedSprite;
 
@@ -32,20 +32,13 @@ public class LevelButtons5 : MonoBehaviour
             else
             {
                 // Level chua mo khoa
-                button.interactable = false;
                 buttonText.gameObject.SetActive(false);
                 buttonImage.sprite = lockedSprite;
             }
 
-            if (buttonText)
-                buttonText.text = levelIndex < 10 ? "0" + levelIndex : levelIndex.ToString();
+            if (buttonText) buttonText.text = levelIndex.ToString("00");
         }
     }
 
-    void Update()
-    {
-
-    }
-
-    private void LoadLevel(int levelIndex) => GameManager5.instance.SetCurrentLV(levelIndex);
+    private void LoadLevel(int levelIndex) => GameManager5.Instance.SetCurrentLV(levelIndex);
 }

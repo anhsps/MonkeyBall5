@@ -97,10 +97,10 @@ public class Player : MonoBehaviour
                 if (hit != null)
                 {
                     animator.SetTrigger("On");
-                    SoundManager5.instance.PlaySound(5);
+                    SoundManager5.Instance.PlaySound(5);
 
                     if (layerName == "Finish")
-                        GameManager5.instance.GameWin();
+                        GameManager5.Instance.GameWin();
                     else if (layerName == "Switch4")
                     {
                         rb.gravityScale *= -1;
@@ -146,8 +146,8 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Trap"))
         {
-            SoundManager5.instance.PlaySound(4);
-            GameManager5.instance.GameLose();
+            SoundManager5.Instance.PlaySound(4);
+            GameManager5.Instance.GameLose();
         }
 
         HandleTrigger(collision, true);
