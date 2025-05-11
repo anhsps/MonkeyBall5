@@ -45,7 +45,7 @@ public class GameManager5 : Singleton<GameManager5>
         PlayerPrefs.SetInt("CurrentLevel", levelIndex);
 
         if (txt && level != 1) txt.gameObject.SetActive(false);
-        if (lvText) lvText.text = "LEVEL " + level.ToString("00");
+        if (lvText) lvText.text = "LEVEL " + levelIndex.ToString("00");
         if (gridPrefabs.Length > 0) StartCoroutine(CreateGrid(levelIndex));
     }
 
